@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import WeatherCard from './WeatherCard';
-// import URL from '../constants/url';
-// import KEY from '../constants/key';
 
 const Weather = () => {
   const [city, setCity] = useState('');
@@ -76,7 +74,10 @@ const Weather = () => {
                 {error && (
                   <p className="text-red-700 text-xl text-center pt-2">
                     {error}{' '}
-                    <span className="ml-40 cursor-pointer" onClick={handleState}>
+                    <span
+                      className="ml-40 cursor-pointer"
+                      onClick={handleState}
+                    >
                       ❌
                     </span>
                   </p>
