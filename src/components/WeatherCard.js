@@ -4,7 +4,7 @@ const WeatherCard = (props) => {
   console.log(props);
   const displayData = props.cityInformation;
   return (
-    <div>
+    <div className="flex justify-center items-center">
       <div className="w-2/4 bg-white rounded-xl">
         <div className="border-b-2"></div>
         {/* Using frunction from callback for sending data to parent component */}
