@@ -3,8 +3,8 @@ import WeatherCard from './WeatherCard';
 
 const Weather = () => {
   const [city, setCity] = useState('');
-  const [data, setData] = useState('');
-  const [error, setError] = useState('');
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
 
   // Function for fetchin API and calling the function on pressing Enter key
 
@@ -24,10 +24,10 @@ const Weather = () => {
       } else {
         setData(responseJson);
       }
-      console.log(responseJson);
     };
 
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && city !== '') {
+      setError('Please Enter the city');
       fetchApi();
     }
   };
@@ -73,7 +73,7 @@ const Weather = () => {
                 />
                 {error && (
                   <p className="text-red-700 text-xl text-center pt-2">
-                    {error}{' '}
+                    {error}
                     <span
                       className="ml-40 cursor-pointer"
                       onClick={handleState}
