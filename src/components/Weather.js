@@ -27,7 +27,6 @@ const Weather = () => {
     };
 
     if (event.key === 'Enter' && city !== '') {
-      setError('Please Enter the city');
       fetchApi();
     }
   };
